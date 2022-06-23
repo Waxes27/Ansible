@@ -9,7 +9,7 @@ os.system("touch ip_campus.txt")
 def ip_threading(i):
     for x in range(200):
         for floor in range(20):
-            ip = subprocess.getoutput(f"ping -c 1 20.20{floor+4}.{i}.{x}")
+            ip = subprocess.getoutput(f"ping -c 1 20.20{floor}.{i}.{x}")
             try:
                 print(re.findall(r"\d{2}.\d{3}.\d{1,}.\d{1,}",ip)[0])
             except IndexError:
